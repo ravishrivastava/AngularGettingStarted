@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { ProductService } from './products/product.service';
 
 @Component({
     selector: 'pm-app',
     template: `
-        <h1>Angular2: Getting Started</h1>
-    `
+        <h1>{{pageTitle}}</h1>
+        <pm-products></pm-products>
+    `,
+    providers: [ProductService]
 })
-export class AppComponent { }
+export class AppComponent {
+  pageTitle: string = "Acme Product Management";
+}
